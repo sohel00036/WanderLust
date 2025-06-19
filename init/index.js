@@ -8,6 +8,7 @@ console.log(process.env.CLOUD_NAME);
 const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
+const User= require("../models/user.js");
 const Review= require("../models/review.js");
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 const dbUrl= process.env.ATLAS_URL;
@@ -27,9 +28,23 @@ async function main() {
 const initDB = async () => {
   await Listing.deleteMany({});
   await Review.deleteMany({});
-  initData.data=initData.data.map((obj)=>({...obj, owner:"684fcc7de94e2e9e2dc436c7"}))
+
+  // Check if user exists, or create one
+  let user = await User.findOne({ username: "admin" });
+  if (!user) {
+    user = new User({ email: "admin@gmail.com", username: "admin" });
+    await User.register(user, "1234"); // hashed password with passport-local-mongoose
+    console.log("admin was not found, So a new user named admin is made.")
+  }
+
+  // Assign the valid user ID
+  initData.data = initData.data.map((obj) => ({
+    ...obj,
+    owner: user._id,
+  }));
+
   await Listing.insertMany(initData.data);
-  console.log("data was initialized");
+  console.log("Sample listings initialized.");
 };
 
 initDB();

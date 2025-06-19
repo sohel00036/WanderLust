@@ -37,7 +37,7 @@ router
 router.get("/new", isLoggedIn, listingController.renderNewForm);
 
 // Show Listing
-// Update Listing
+// Update Listing 
 // Delete Listing
 router
   .route("/:id")
