@@ -1,0 +1,465 @@
+body{
+    font-family:"Karla", sans-serif; 
+    
+}
+
+/* navebar */
+/* Navbar */
+/* Navbar */
+/* Style for the Bootstrap 4 hamburger menu icon */
+
+.custom-navbar {
+  height: auto;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  z-index: 1030;
+}
+
+.custom-navbar-icon {
+  color: #fe424d;
+  font-size: 1.8rem;
+  margin-right: 1rem;
+}
+
+.custom-navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.custom-navbar-links {
+  gap: 1.2rem;
+}
+
+.custom-nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  position: relative;
+}
+
+.custom-nav-link:hover {
+  color: #fe424d !important;
+}
+
+.custom-nav-link::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #fe424d;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.custom-nav-link:hover::after {
+  width: 100%;
+}
+
+/* Search bar */
+.search-bar-wrapper {
+  border: 2px solid #FF5A5F;
+  border-radius: 50px;
+  overflow: hidden;
+  max-width: 300px;
+}
+
+.search-input {
+  border: none;
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  box-shadow: none;
+  width: 180px;
+}
+
+.search-btn {
+  background-color: #FF5A5F;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #e0484d;
+}
+
+.search-input:focus,
+.search-btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-bar-wrapper {
+    margin-left:.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-form {
+    flex-grow: 1;
+  }
+}
+input.search-input.form-control:focus,
+button.search-btn.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* footer */
+.f-info-links a{
+    text-decoration: none;
+    color:#222222;
+}
+.f-info-links a:hover{
+    text-decoration:underline;
+}
+.f-info-links,
+.f-info-socials,
+.f-info-brand{
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-right: 2rem;
+
+}
+
+.f-info{
+    text-align: center;
+
+    height: 8rem;
+    background-color: ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+     
+}
+
+/* cards
+.card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border:none !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    
+
+}
+.listing-link{
+    text-decoration: none;
+    color: black;
+}
+
+.card-body{
+    padding: 0 !important;
+
+} 
+ 
+.card-text p {
+    font-weight: 400;
+}
+.card-img-overlay{
+    opacity:0;
+}
+.card-img-overlay:hover{
+    opacity:0.2;
+    background-color: white;
+} */
+
+
+
+    /* start of the index.ejs ki css */
+#listing-icons-container {
+  gap: .8rem;
+}
+#listing-icons-container{
+  gap:.3rem;
+}
+#listing-icons-container .icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  width: 70px;
+  margin-bottom: 0.5rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+#listing-icons-container .icon-item i {
+  font-size: 1rem; /* smaller size */
+  color: #444;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#listing-icons-container .icon-item:hover i {
+  color: #FF5A5F;
+  transform: scale(1.1);
+}
+
+#listing-icons-container .icon-title {
+  margin-top: 0.3rem;
+  font-size: 0.4rem;
+  color: #333;
+  margin-left: -3px;
+}
+
+
+
+.card {
+  border: none !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  height: 16rem;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card-body {
+  padding: 1rem !important;
+}
+
+.listing-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.listing-link:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.card-text {
+  font-weight: 500;
+  color: #555;
+}
+
+
+
+
+
+
+
+/* new wali ki css */
+
+/* Body specific to create listing page */
+#create-listing-body {
+  background-color: #f8f9fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container styling */
+#create-listing-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Heading style */
+#create-listing-heading {
+  text-align: center;
+  color: #333;
+}
+
+/* Form customization */
+#create-listing-form {
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+/* Individual input styling (optional) */
+#listing-title,
+#listing-image,
+#listing-description,
+#listing-price,
+#listing-location,
+#listing-country {
+  border-radius: 4px;
+}
+
+/* Button styling */
+#create-listing-button {
+  width: 100%;
+}
+
+/* end of the new wale ki css */
+
+/*start of the show.ejs wali file*/
+/* Container */
+/* Container Layout */
+/* Main container split into two columns */
+#show-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  gap: 30px;
+}
+
+/* Left: Image section */
+#show-image-section {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+#show-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Right: Details */
+#show-details-section {
+  flex: 2;
+  min-width: 300px;
+}
+
+/* List styling */
+#show-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#show-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Price styling */
+#show-price {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #2c3e50;
+}
+
+/* Actions container */
+#show-actions {
+  display: flex;
+  gap: 20px;
+}
+
+/* Update link */
+#show-update-link {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+#show-update-link:hover {
+  background-color: #0056b3;
+}
+
+/* Delete button */
+#show-delete-button {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#show-delete-button:hover {
+  background-color: #a71d2a;
+}
+
+/* Review section takes full width */
+#review-section {
+  margin: 40px 20px;
+  width: calc(100% - 40px);
+}
+
+
+/* end of show .ejs wali file*/
+
+/*start of the update.ejs file*/
+
+/* Container */
+#update-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-family: 'Karla', sans-serif;
+}
+
+/* Form styling */
+#update-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+#update-form label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Inputs */
+#update-form input[type="text"] {
+    padding: 10px 12px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #444;
+    transition: border-color 0.3s ease;
+}
+
+#update-form input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Submit button */
+#update-submit-button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#update-submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* end of the update.ejs file*/

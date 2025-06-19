@@ -1,0 +1,57 @@
+<nav class="custom-navbar navbar navbar-expand-md sticky-top shadow-sm border-bottom bg-white">
+  <div class="container d-flex align-items-center justify-content-between">
+    <!-- Brand & Left section -->
+    <div class="d-flex align-items-center">
+      <a class="custom-navbar-brand navbar-brand" href="/listings">
+        <i class="fa-solid fa-compass custom-navbar-icon"></i>
+      </a>
+      <div class="custom-navbar-links navbar-nav d-flex align-items-center">
+        <a class="custom-nav-link nav-link" href="/listings"><b>Explore</b></a>
+      </div>
+    </div>
+
+    <!-- Search (always visible & centered) -->
+    <form class="mx-auto search-form ml-md-3" action="/listings" method="GET">
+      <div class="input-group search-bar-wrapper">
+        <input
+          type="text"
+          name="query"
+          class="form-control search-input"
+          placeholder="Search listings..."
+          aria-label="Search"
+        />
+        <div class="input-group-append">
+          <button class="btn search-btn" type="submit">
+            <i class="fa-brands fa-searchengin"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Toggler -->
+    <button
+      class="navbar-toggler ml-2"
+      type="button"
+      data-toggle="collapse"
+      data-target="#customNavbarNav"
+      aria-controls="customNavbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars text-dark"></i>
+    </button>
+
+    <!-- Collapsible content (Right section shown only inside collapse) -->
+    <div class="collapse navbar-collapse" id="customNavbarNav">
+      <div class="navbar-nav ml-auto mt-2 mt-md-0">
+        <a class="custom-nav-link nav-link" href="/listings/new"> Airbnb your home </a>
+        <% if (!currUser) { %>
+          <a class="custom-nav-link nav-link" href="/login"><b>LogIn</b></a>
+          <a class="custom-nav-link nav-link" href="/signup"><b>SignUp</b></a>
+        <% } else { %>
+          <a class="custom-nav-link nav-link" href="/logout"><b>LogOut</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

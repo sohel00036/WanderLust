@@ -1,0 +1,9 @@
+router
+  .route("/")
+  .get(wrapAsync(listingController.index))
+  .post(
+    isLoggedIn,    
+    upload.single('listing[image][url]'),
+    validateListing,
+    wrapAsync(listingController.createListing)
+  );

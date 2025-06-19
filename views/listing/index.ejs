@@ -1,0 +1,102 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+      <div class="container py-4">
+      <!-- Row to split icons on left and toggle on right -->
+      <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+        
+        <!-- LEFT: ICONS -->
+        <div id="listing-icons-container" class="d-flex flex-wrap text-center">
+          <div class="icon-item">
+            <i class="fa-solid fa-fire fa-2x"></i>
+            <div class="icon-title">Trending</div>
+          </div>
+          <div class="icon-item">
+            <i class="fa-solid fa-bed fa-2x"></i>
+            <div class="icon-title">Rooms</div>
+          </div>
+          <div class="icon-item">
+            <i class="fa-solid fa-umbrella-beach"></i>
+            <div class="icon-title">Beaches</div>
+          </div>
+          <div class="icon-item">
+            <i class="fa-solid fa-mountain-city fa-2x"></i>
+            <div class="icon-title">Mountain City</div>
+          </div>
+          <div class="icon-item">
+            <i class="fa-solid fa-mountain-sun fa-2x"></i>
+            <div class="icon-title">Mountains</div>
+          </div>
+          <div class="icon-item">
+            <i class="fa-solid fa-chess-rook fa-2x"></i>
+            <div class="icon-title">Castle</div>
+          </div>
+          <div class="icon-item">
+            <i class="fa-solid fa-person-swimming fa-2x"></i>
+            <div class="icon-title">Pools</div>
+          </div>
+          <div class="icon-item">
+            <i class="fa-solid fa-campground fa-2x"></i>
+            <div class="icon-title">Camping</div>
+          </div>
+          <div class="icon-item">
+            <i class="fa-solid fa-igloo"></i>
+            <div class="icon-title">Igloos</div>
+          </div>
+          <div class="icon-item">
+            <i class="fa-solid fa-ship"></i>
+            <div class="icon-title">Boats</div>
+          </div>
+          <div class="icon-item">
+            <i class="fa-solid fa-tractor fa-2x"></i>
+            <div class="icon-title">Farm Houses</div>
+          </div>
+          <div class="icon-item">
+            <i class="fa-solid fa-snowman fa-2x"></i>
+            <div class="icon-title">Arctic</div>
+          </div>
+        </div>
+
+        <!-- Toggle Switch + Label Side by Side -->
+        <div class="custom-switch-wrapper">
+          <label class="switch" id="flexSwitchCheckDefault">
+            <input type="checkbox" id="myToggleSwitch">
+            <span class="slider round"></span>
+          </label>
+          <span class="switch-label-text">Include Taxes</span>
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <div class="row g-4">
+      
+      <% for (let listing of allListings) { %>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100 listing-card">
+            <img src="<%= listing.image.url %>" class="card-img-top" alt="Listing image" />
+            <div class="card-body">
+              <a class="listing-link" href="/listings/<%= listing.id %>">
+                <h5 class="card-title fw-bold"><%= listing.title %></h5>
+              </a>
+              <p class="card-text">&#8377;<%= listing.price.toLocaleString("en-IN") %>  <span class="gst-label" style="display: none;"><i>&nbsp;&nbsp;+ 18% GST</i></span></p>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+<script>
+  let taxSwitch = document.getElementById("myToggleSwitch");
+  let gstLabels = document.querySelectorAll(".gst-label");
+
+  taxSwitch.addEventListener("change", () => {
+    gstLabels.forEach(label => {
+      label.style.display = taxSwitch.checked ? "inline" : "none";
+    });
+  });
+</script>
+</body>
+
