@@ -126,6 +126,7 @@ app.use((err, req, res, next) => {
     res.render("error.ejs",{message} );
 });
 
-app.listen(3000, () => {
-  console.log("listening baby :)");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });

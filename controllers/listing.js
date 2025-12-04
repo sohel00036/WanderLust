@@ -27,7 +27,7 @@ module.exports.showListing = async (req, res) => {
   }
 
   res.render("listing/show.ejs", { list });
-};
+}; 
 
 module.exports.createListing = async (req, res) => {
   let url= req.file.path;

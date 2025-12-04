@@ -9,7 +9,7 @@ const multer= require("multer");
 const {storage,cloudinary}= require("../cloudConfig.js");
 const upload= multer({storage});
 
-// Index Route
+// Index Route 
 // Create Listing
 router
   .route("/")
